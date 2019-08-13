@@ -4,6 +4,8 @@ const server = express();
 const mongoose = require('mongoose');
 
 //CONNECT DATABASE
+const data = require('../data')
+mongoose.connect(data.mangodbUrl, { useNewUrlParser: true })
 
 server.use(express.json())
 server.use(routes)
