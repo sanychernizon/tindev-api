@@ -20,7 +20,6 @@ module.exports = {
         bio,
         avatar: avatar_url
       })
-      
       return res.json(dev)
     }
 
