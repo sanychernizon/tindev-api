@@ -1,12 +1,14 @@
 const express = require('express');
-const routes = require('./routes')
+const routes = require('./routes');
 const server = express();
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 //CONNECT DATABASE
 const data = require('../data')
 mongoose.connect(data.mangodbUrl, { useNewUrlParser: true })
 
+server.use(cors())
 server.use(express.json())
 server.use(routes)
 
